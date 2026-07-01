@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway, serif;
+}
+body {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("./images/bg-mobile.png") center / cover no-repeat;
+}
+.wrapper {
+    width: min(100% - 3em, 120ch);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 1em;
+}
+.navigation__section,
+.main__section {
+    padding: 3em;
+    border-radius: 7px;
+    background-color: hsl(228, 56%, 26%);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.navigation__section {
+    border-top-right-radius: 100px;
+}
+nav {
+    display: flex;
+    gap: 1em;
+}
+
+.nav-elem {
+    display: flex;
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: hsl(229, 57%, 11%);
+}
+.nav-elem img {
+    margin: auto;
+}
+.main__section {
+    text-align: center;
+    gap: 1em;
+    color: hsl(243, 100%, 93%);
+    position: relative;
+}
+.highlight,
+.main__progress-text {
+    font-weight: 700;
+}
+.main__progress-text {
+    display: flex;
+    justify-content: space-between;
+}
+.main__progress-bar {
+    border-radius: 10px;
+    height: 20px;
+    background-color: #14204a;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+}
+.main__progress-fill {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-radius: 10px;
+    height: 15px;
+    padding-right: 2px;
+    background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+.main__progress-circle {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: hsl(243, 100%, 93%);
+}
+.main__progress-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.main__notification {
+    color: hsl(229, 7%, 55%);
+    background-color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 200px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 10px;
+    position: absolute;
+    top: 130px;
+    right: 50%;
+    transform: translateX(50%);
+}
+.main__notification span {
+    font-weight: 700;
+    font-size: 40px;
+    color: hsl(229, 57%, 11%);
+}
+footer {
+    font-size: 12px;
+    color: hsl(243, 100%, 93%);
+    text-align: center;
+}
+footer a {
+    color: hsl(228, 45%, 44%);
+}
+@media (min-width: 650px) {
+    body {
+        background:
+            url("./images/bg-desktop.png") 0% 120% / 100% no-repeat,
+            hsl(229, 57%, 11%);
+    }
+    .wrapper {
+        flex-direction: row;
+        gap: 2em;
+    }
+    .main__section {
+        width: 70%;
+        height: 75%;
+        align-self: end;
+        box-shadow: 20px 30px 50px 10px #101837;
+    }
+    .navigation__section {
+        width: max(30%, 30ch);
+        box-shadow: 20px 30px 50px 10px #10193b;
+    }
+    .main__notification {
+        top: -50px;
+        right: 150px;
+        border-bottom-right-radius: 0;
+    }
+    .main__notification::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        right: 0px;
+        border-width: 10px 0 0 20px;
+        border-style: solid;
+        border-color: white transparent transparent transparent;
+    }
+}
