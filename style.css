@@ -153,4 +153,7 @@ footer a {
         border-style: solid;
         border-color: white transparent transparent transparent;
     }
+    .main__section span {
+        text-align: left;
+    }
 }
